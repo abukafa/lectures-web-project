@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/sm.png" />
+    <title>Static Website | Contact</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      .medsos {
+        text-decoration: none;
+        display: block;
+        margin-top: 0.5rem;
+      }
+      .dark-mode {
+        background-color: var(--bs-dark-text-emphasis);
+        color: var(--bs-body-bg);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary py-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Sample Static Website</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="bd-theme"
+              >
+                <i
+                  class="bi bi-sun-fill theme-icon-active"
+                  data-theme-icon-active="bi-sun-fill"
+                ></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-theme-value="light"
+                    id="bd-theme-text"
+                    ><i
+                      class="bi bi-sun-fill"
+                      data-theme-icon="bi-sun-fill"
+                    ></i>
+                    Light</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-theme-value="dark"
+                    id="bd-theme-text"
+                    ><i
+                      class="bi bi-moon-stars-fill"
+                      data-theme-icon="bi-moon-stars-fill"
+                    ></i>
+                    Dark</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-theme-value="auto"
+                    id="bd-theme-text"
+                    ><i
+                      class="bi bi-circle-half"
+                      data-theme-icon="bi-circle-half"
+                    ></i>
+                    Auto</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="animate__animated animate__fadeInDown">Lets Start Work</h1>
+          <h3 class="text-primary animate__animated animate__fadeInUp">
+            Make something amazing
+          </h3>
+        </div>
+        <div class="col-md-3 animate__animated animate__fadeInRight">
+          <br />
+          <a class="medsos" href="http://wa.me/+6287733907998" target="_blank">
+            <i class="bi bi-whatsapp me-2"></i>
+            +62877 3380 7998
+          </a>
+          <a
+            class="medsos"
+            href="mailto:hikam.abukafa@gmail.com"
+            target="_blank"
+          >
+            <i class="bi bi-envelope-fill me-2"></i>
+            hikam.abukafa@gmail.com
+          </a>
+        </div>
+        <div
+          class="col-md-3 animate__animated animate__fadeInRight animate__delay-1s"
+        >
+          <br />
+          <a
+            class="medsos"
+            href="https://www.linkedin.com/in/abdul-aziz-abu-944b22251/"
+            target="_blank"
+          >
+            <i class="bi bi-linkedin me-2"></i>
+            abukafa
+          </a>
+          <a class="medsos" href="http://abukafa.github.io/" target="_blank">
+            <i class="bi bi-browser-chrome me-2"></i>
+            abukafa.github.com
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      /*!
+       * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+       * Copyright 2011-2023 The Bootstrap Authors
+       * Licensed under the Creative Commons Attribution 3.0 Unported License.
+       */
+      (() => {
+        "use strict";
+
+        const storedTheme = localStorage.getItem("theme");
+
+        const getPreferredTheme = () => {
+          if (storedTheme) {
+            return storedTheme;
+          }
+
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        };
+
+        const setTheme = function (theme) {
+          if (
+            theme === "auto" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            document.documentElement.setAttribute("data-bs-theme", "dark");
+          } else {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+          }
+        };
+
+        setTheme(getPreferredTheme());
+
+        const showActiveTheme = (theme, focus = false) => {
+          const themeSwitcher = document.querySelector("#bd-theme");
+
+          if (!themeSwitcher) {
+            return;
+          }
+
+          const themeSwitcherText = document.querySelector("#bd-theme-text");
+          const activeThemeIcon = document.querySelector(".theme-icon-active");
+          const btnToActive = document.querySelector(
+            `[data-bs-theme-value="${theme}"]`
+          );
+          const iconOfActiveBtn = btnToActive
+            .querySelector("i")
+            .getAttribute("data-theme-icon");
+
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((element) => {
+              element.classList.remove("active");
+              element.setAttribute("aria-pressed", "false");
+            });
+
+          btnToActive.classList.add("active");
+          btnToActive.setAttribute("aria-pressed", "true");
+          activeThemeIcon.classList.remove(
+            activeThemeIcon.getAttribute("data-theme-icon-active")
+          );
+          activeThemeIcon.classList.add(iconOfActiveBtn);
+          activeThemeIcon.setAttribute(
+            "data-theme-icon-active",
+            iconOfActiveBtn
+          );
+          const themeSwitcherLabel = `${
+            themeSwitcherText.textContent
+          } (${btnToActive.getAttribute("data-bs-theme-value")})`;
+          themeSwitcher.setAttribute("aria-label", themeSwitcherLabel);
+
+          if (focus) {
+            themeSwitcher.focus();
+          }
+        };
+
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", () => {
+            if (storedTheme !== "light" || storedTheme !== "dark") {
+              setTheme(getPreferredTheme());
+            }
+          });
+
+        window.addEventListener("DOMContentLoaded", () => {
+          showActiveTheme(getPreferredTheme());
+
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((toggle) => {
+              toggle.addEventListener("click", () => {
+                const theme = toggle.getAttribute("data-bs-theme-value");
+                localStorage.setItem("theme", theme);
+                setTheme(theme);
+                showActiveTheme(theme, true);
+              });
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/sm.png" />
+    <title>Static Website | About</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      .dark-mode {
+        background-color: var(--bs-dark-text-emphasis);
+        color: var(--bs-body-bg);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary py-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Sample Static Website</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="bd-theme"
+              >
+                <i
+                  class="bi bi-sun-fill theme-icon-active"
+                  data-theme-icon-active="bi-sun-fill"
+                ></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-theme-value="light"
+                    id="bd-theme-text"
+                    ><i
+                      class="bi bi-sun-fill"
+                      data-theme-icon="bi-sun-fill"
+                    ></i>
+                    Light</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-theme-value="dark"
+                    id="bd-theme-text"
+                    ><i
+                      class="bi bi-moon-stars-fill"
+                      data-theme-icon="bi-moon-stars-fill"
+                    ></i>
+                    Dark</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-theme-value="auto"
+                    id="bd-theme-text"
+                    ><i
+                      class="bi bi-circle-half"
+                      data-theme-icon="bi-circle-half"
+                    ></i>
+                    Auto</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      id="myCarousel"
+      class="carousel slide animate__animated animate__slideInRight"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          class=""
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+          class="active"
+          aria-current="true"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+          class=""
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <img src="img/3.jpg" class="img-fluid" width="100%" height="100%" />
+        </div>
+        <div class="carousel-item active">
+          <img src="img/1.jpg" class="img-fluid" width="100%" height="100%" />
+        </div>
+        <div class="carousel-item">
+          <img src="img/2.jpg" class="img-fluid" width="100%" height="100%" />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="container text-center my-5">
+      <h3 class="animate__animated animate__fadeInUp">
+        I wish could be a Good Husband and Father for my family.
+      </h3>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">
+        Giving an education, hopes, and a good life as well.
+      </p>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      /*!
+       * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+       * Copyright 2011-2023 The Bootstrap Authors
+       * Licensed under the Creative Commons Attribution 3.0 Unported License.
+       */
+      (() => {
+        "use strict";
+
+        const storedTheme = localStorage.getItem("theme");
+
+        const getPreferredTheme = () => {
+          if (storedTheme) {
+            return storedTheme;
+          }
+
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        };
+
+        const setTheme = function (theme) {
+          if (
+            theme === "auto" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            document.documentElement.setAttribute("data-bs-theme", "dark");
+          } else {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+          }
+        };
+
+        setTheme(getPreferredTheme());
+
+        const showActiveTheme = (theme, focus = false) => {
+          const themeSwitcher = document.querySelector("#bd-theme");
+
+          if (!themeSwitcher) {
+            return;
+          }
+
+          const themeSwitcherText = document.querySelector("#bd-theme-text");
+          const activeThemeIcon = document.querySelector(".theme-icon-active");
+          const btnToActive = document.querySelector(
+            `[data-bs-theme-value="${theme}"]`
+          );
+          const iconOfActiveBtn = btnToActive
+            .querySelector("i")
+            .getAttribute("data-theme-icon");
+
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((element) => {
+              element.classList.remove("active");
+              element.setAttribute("aria-pressed", "false");
+            });
+
+          btnToActive.classList.add("active");
+          btnToActive.setAttribute("aria-pressed", "true");
+          activeThemeIcon.classList.remove(
+            activeThemeIcon.getAttribute("data-theme-icon-active")
+          );
+          activeThemeIcon.classList.add(iconOfActiveBtn);
+          activeThemeIcon.setAttribute(
+            "data-theme-icon-active",
+            iconOfActiveBtn
+          );
+          const themeSwitcherLabel = `${
+            themeSwitcherText.textContent
+          } (${btnToActive.getAttribute("data-bs-theme-value")})`;
+          themeSwitcher.setAttribute("aria-label", themeSwitcherLabel);
+
+          if (focus) {
+            themeSwitcher.focus();
+          }
+        };
+
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", () => {
+            if (storedTheme !== "light" || storedTheme !== "dark") {
+              setTheme(getPreferredTheme());
+            }
+          });
+
+        window.addEventListener("DOMContentLoaded", () => {
+          showActiveTheme(getPreferredTheme());
+
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((toggle) => {
+              toggle.addEventListener("click", () => {
+                const theme = toggle.getAttribute("data-bs-theme-value");
+                localStorage.setItem("theme", theme);
+                setTheme(theme);
+                showActiveTheme(theme, true);
+              });
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
